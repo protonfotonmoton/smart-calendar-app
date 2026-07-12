@@ -1,0 +1,96 @@
+.event-card {
+  --ev-color: var(--ev-blue);
+  display: flex;
+  align-items: stretch;
+  gap: 0.35rem;
+  background: color-mix(in srgb, var(--ev-color) 16%, var(--surface-2));
+  border: 1px solid color-mix(in srgb, var(--ev-color) 35%, transparent);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+  text-align: left;
+}
+
+.event-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  background: color-mix(in srgb, var(--ev-color) 26%, var(--surface-2));
+}
+
+.event-card__bar {
+  width: 4px;
+  flex-shrink: 0;
+  background: var(--ev-color);
+}
+
+.event-card__content {
+  padding: 0.2rem 0.45rem 0.25rem 0.05rem;
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.event-card__title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.event-card__title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.event-card__badge {
+  flex-shrink: 0;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.1rem 0.35rem;
+  border-radius: 999px;
+  background: var(--accent-glow);
+  color: var(--accent-light);
+}
+
+.event-card__time {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.event-card__location {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Month view: compact single-line pill */
+.event-card--month {
+  padding: 0;
+}
+.event-card--month .event-card__content {
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+}
+
+/* Week/Day view: absolutely positioned blocks with more room */
+.event-card--week,
+.event-card--day {
+  height: 100%;
+  align-items: stretch;
+}
+.event-card--week .event-card__content,
+.event-card--day .event-card__content {
+  padding-top: 0.3rem;
+}

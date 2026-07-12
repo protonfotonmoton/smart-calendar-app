@@ -1,0 +1,90 @@
+.file-import {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.file-import__dropzone {
+  border: 2px dashed var(--border-strong);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.file-import__dropzone:hover,
+.file-import__dropzone--active {
+  border-color: var(--accent);
+  background: rgba(59, 130, 246, 0.06);
+}
+
+.file-import__icon {
+  font-size: 1.8rem;
+  color: var(--accent-light);
+  margin-bottom: 0.3rem;
+}
+
+.file-import__title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.file-import__subtitle {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.file-import__status {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.file-import__errors {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: var(--radius);
+  padding: 0.85rem 1rem;
+  color: #fca5a5;
+  font-size: 0.85rem;
+}
+
+.file-import__errors-title {
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.file-import__errors ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.file-import__help {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+}
+
+.file-import__help summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.file-import__help p {
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+.file-import__footer {
+  display: flex;
+  justify-content: flex-end;
+}

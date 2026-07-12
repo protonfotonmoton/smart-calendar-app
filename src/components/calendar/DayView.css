@@ -1,0 +1,73 @@
+.day-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.day-view__body {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.day-view__time-gutter {
+  position: relative;
+}
+
+.day-view__hour-label {
+  font-size: 0.7rem;
+  color: var(--text-faint);
+  text-align: right;
+  padding-right: 0.6rem;
+  transform: translateY(-0.5em);
+}
+
+.day-view__col {
+  position: relative;
+  border-left: 1px solid var(--border);
+}
+
+.day-view__slot {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+  padding: 0;
+}
+
+.day-view__slot:hover {
+  background: rgba(59, 130, 246, 0.06);
+}
+
+.day-view__now-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--danger);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.day-view__now-line::before {
+  content: "";
+  position: absolute;
+  left: -4px;
+  top: -3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--danger);
+}
+
+.day-view__event-wrapper {
+  position: absolute;
+  z-index: 2;
+  padding: 1px 4px;
+}

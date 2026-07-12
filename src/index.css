@@ -1,0 +1,161 @@
+/* ============================================================
+   Smart Calendar App — Global Design System
+   Dark-mode-first, polished, CSS-first (no CSS frameworks).
+   ============================================================ */
+
+/* Core variables - dark theme */
+:root {
+  --bg: #060d1a;
+  --surface: #0d1829;
+  --surface-2: #111e33;
+  --surface-3: #19293f;
+  --border: rgba(100, 150, 210, 0.15);
+  --border-strong: rgba(100, 150, 210, 0.3);
+  --text: #e4edfb;
+  --text-muted: #8aa5c8;
+  --text-faint: #4a6585;
+  --accent: #3b82f6;
+  --accent-light: #60a5fa;
+  --accent-glow: rgba(59, 130, 246, 0.25);
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 48px rgba(0, 0, 0, 0.5);
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+  color-scheme: dark;
+}
+
+/* Additional event color palette */
+:root {
+  --ev-blue: #3b82f6;
+  --ev-green: #10b981;
+  --ev-purple: #8b5cf6;
+  --ev-orange: #f97316;
+  --ev-pink: #ec4899;
+  --ev-teal: #06b6d4;
+  --ev-red: #ef4444;
+  --ev-yellow: #eab308;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(1200px 800px at 10% -10%, rgba(59, 130, 246, 0.08), transparent 60%),
+    radial-gradient(1000px 700px at 100% 0%, rgba(139, 92, 246, 0.06), transparent 55%), var(--bg);
+  color: var(--text);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  color: inherit;
+}
+
+a {
+  color: var(--accent-light);
+}
+
+::selection {
+  background: var(--accent-glow);
+}
+
+/* Scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--surface-3) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--surface-3);
+  border-radius: 8px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}
+
+/* Focus ring - accessible & consistent */
+:focus-visible {
+  outline: 2px solid var(--accent-light);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Event color utility classes, shared by EventCard & related surfaces */
+.ev-blue {
+  --ev-color: var(--ev-blue);
+}
+.ev-green {
+  --ev-color: var(--ev-green);
+}
+.ev-purple {
+  --ev-color: var(--ev-purple);
+}
+.ev-orange {
+  --ev-color: var(--ev-orange);
+}
+.ev-pink {
+  --ev-color: var(--ev-pink);
+}
+.ev-teal {
+  --ev-color: var(--ev-teal);
+}
+.ev-red {
+  --ev-color: var(--ev-red);
+}
+.ev-yellow {
+  --ev-color: var(--ev-yellow);
+}
