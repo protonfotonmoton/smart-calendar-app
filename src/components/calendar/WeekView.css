@@ -1,0 +1,118 @@
+.week-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.week-view__header {
+  display: grid;
+  grid-template-columns: 64px repeat(7, 1fr);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.week-view__day-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.6rem 0;
+  border-left: 1px solid var(--border);
+}
+
+.week-view__day-name {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  letter-spacing: 0.05em;
+}
+
+.week-view__day-num {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.week-view__day-head--today .week-view__day-num {
+  color: white;
+  background: var(--accent);
+  border-radius: 999px;
+  width: 1.9rem;
+  height: 1.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.week-view__body {
+  display: grid;
+  grid-template-columns: 64px repeat(7, 1fr);
+  overflow-y: auto;
+  flex: 1;
+  position: relative;
+}
+
+.week-view__time-gutter {
+  position: relative;
+}
+
+.week-view__hour-label {
+  font-size: 0.65rem;
+  color: var(--text-faint);
+  text-align: right;
+  padding-right: 0.5rem;
+  transform: translateY(-0.5em);
+  border-top: 1px solid transparent;
+}
+
+.week-view__day-col {
+  position: relative;
+  border-left: 1px solid var(--border);
+}
+
+.week-view__slot {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  cursor: pointer;
+  padding: 0;
+  width: 100%;
+}
+
+.week-view__slot:hover {
+  background: rgba(59, 130, 246, 0.06);
+}
+
+.week-view__now-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--danger);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.week-view__now-line::before {
+  content: "";
+  position: absolute;
+  left: -4px;
+  top: -3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--danger);
+}
+
+.week-view__event-wrapper {
+  position: absolute;
+  z-index: 2;
+  padding: 1px;
+}
